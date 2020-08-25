@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/strategy_img"
+            android:layout_width="100dp"
+            android:layout_height="60dp" />
+
+        <TextView
+            android:id="@+id/strategy_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/strategy_img"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/strategy_img"
+            android:textColor="@color/black1"
+            tools:text="贷款由什么决定的？" />
+
+        <TextView
+            android:id="@+id/strategy_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/strategy_img"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/strategy_img"
+            android:textColor="@color/gray1"
+            android:textSize="12sp"
+            tools:text="2019-10.23 14:35:11" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/strategy_time_tv"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/strategy_time_tv"
+                android:layout_marginRight="2dp"
+                android:layout_toLeftOf="@+id/strategy_num_tv"
+                android:src="@mipmap/icon_read" />
+
+            <TextView
+                android:id="@+id/strategy_num_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray1"
+                android:textSize="12sp"
+                tools:text="88888阅读" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/home_line" />
+
+</LinearLayout>

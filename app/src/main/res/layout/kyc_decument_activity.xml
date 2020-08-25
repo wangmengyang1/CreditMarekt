@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_F6FEF3"
+    >
+
+
+    <include layout="@layout/view_title" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textColor="@color/color_000000"
+        android:text="KYC Documents"
+        android:layout_marginLeft="25dp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/color_000000"
+            android:text="Aadhaar\nCard"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="1dp"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/kyc_decument_front"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:src="@drawable/icon_kyc_01"
+                android:scaleType="centerInside"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="Front"
+                android:layout_below="@id/kyc_decument_front"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            >
+
+            <ImageView
+                android:id="@+id/kyc_decument_back"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:src="@drawable/icon_kyc_02"
+                android:scaleType="centerInside"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="Back"
+                android:layout_below="@id/kyc_decument_back"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="60dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/color_000000"
+            android:text="PAN Card"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="1dp"/>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            >
+
+            <ImageView
+                android:id="@+id/kyc_decument_pan"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:src="@drawable/icon_kyc_03"
+                android:scaleType="centerInside"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="PAN"
+                android:layout_below="@id/kyc_decument_pan"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="@color/color_000000"
+        android:text="Ensure you are taking/uploading clear photos of original documents"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="80dp"
+        />
+
+
+    <TextView
+        android:id="@+id/submit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@color/color_20C69d"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="Confirm and Continue"
+        android:textSize="18sp"
+        android:textColor="@color/color_000000"
+        />
+
+</LinearLayout>

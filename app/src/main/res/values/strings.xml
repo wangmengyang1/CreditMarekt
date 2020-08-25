@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Lending Hub</string>
+    <string name="permission_storage_refused">您拒绝了文件读写的权限，请到设置中修改</string>
+    <string name="permission_camera_refused">您拒绝了使用摄像头的权限，请到设置中修改</string>
+    <string name="permission_record_audio_refused">您拒绝了使用麦克风的权限，请到设置中修改</string>
+    <string name="permission_location_refused">您拒绝了使用定位的权限，请到设置中修改</string>
+    <string name="permission_read_phone_state_refused">您拒绝了读取手机信息的权限，请到设置中修改</string>
+
+    <string name="main_home">Home</string>
+    <string name="main_credit">loans</string>
+    <string name="main_self">my</string>
+    <string name="main_person">user</string>
+
+    <string name="main_click_next_exit">再按一次退出</string>
+    <string name="choose_flie">选择文件</string>
+    <string name="copy_success">复制成功</string>
+
+    <string name="reg_input_phone">请输入您的手机号</string>
+    <string name="reg_input_code">请输入验证码</string>
+    <string name="login_phone_error">请输入正确的手机号码</string>
+    <string name="reg_get_code_again">Re-send</string>
+</resources>

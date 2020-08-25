@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:background="@color/color_F6FEF3"
+    >
+    <include layout="@layout/view_title" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textColor="@color/color_000000"
+        android:text="Profile inforamtion"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        />
+
+
+    <RelativeLayout
+        android:id="@+id/basic_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        >
+
+        <ImageView
+            android:id="@+id/user"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/icon_user"
+            android:layout_centerVertical="true"
+            />
+
+
+        <TextView
+            android:id="@+id/user_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/color_000000"
+            android:text="Basic Information"
+            android:layout_toRightOf="@id/user"
+            android:layout_marginLeft="30dp"
+            />
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="A few details about you"
+            android:layout_toRightOf="@id/user"
+            android:layout_marginLeft="30dp"
+            android:layout_below="@id/user_01"
+            android:layout_marginTop="10dp"
+            />
+
+
+        <ImageView
+            android:id="@+id/basic_image"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/icon_more"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/doucuments_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        >
+
+        <ImageView
+            android:id="@+id/doucuments"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/icon_doucuments"
+            android:layout_centerVertical="true"
+            />
+
+
+        <TextView
+            android:id="@+id/user_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/color_000000"
+            android:text="KYC Documents"
+            android:layout_toRightOf="@id/doucuments"
+            android:layout_marginLeft="30dp"
+            />
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="Aadhaar PAN"
+            android:layout_toRightOf="@id/doucuments"
+            android:layout_marginLeft="30dp"
+            android:layout_below="@id/user_02"
+            android:layout_marginTop="10dp"
+            />
+
+
+        <ImageView
+            android:id="@+id/doucuments_image"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/icon_more"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bank_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        >
+
+        <ImageView
+            android:id="@+id/bank"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/icon_bank"
+            android:layout_centerVertical="true"
+            />
+
+
+        <TextView
+            android:id="@+id/user_03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/color_000000"
+            android:text="Bank Information"
+            android:layout_toRightOf="@id/bank"
+            android:layout_marginLeft="30dp"
+            />
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="A few details about you"
+            android:layout_toRightOf="@id/bank"
+            android:layout_marginLeft="30dp"
+            android:layout_below="@id/user_03"
+            android:layout_marginTop="10dp"
+            />
+
+
+        <ImageView
+            android:id="@+id/bank_image"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/icon_more"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+
+
+
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp"
+        >
+
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/icon_dunpai"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/color_59B9AF"
+            android:text="128 bit SSL protection secure"
+            android:layout_marginLeft="10dp"
+
+            />
+    </LinearLayout>
+
+</LinearLayout>
