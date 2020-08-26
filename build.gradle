@@ -2,13 +2,13 @@
 
 buildscript {
     repositories {
-
+        mavenCentral()
         maven{ url'http://maven.aliyun.com/nexus/content/groups/public/' }
         maven{ url'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
         google()
         maven { url 'https://jitpack.io' }
         jcenter()
-        mavenCentral()
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.2'
@@ -20,6 +20,7 @@ buildscript {
 
 allprojects {
     repositories {
+        mavenCentral()
         maven{ url'http://maven.aliyun.com/nexus/content/groups/public/' }
         maven{ url'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
         maven { url "http://maven.aliyun.com/nexus/content/repositories/releases" }
@@ -28,7 +29,7 @@ allprojects {
         google()
         maven { url 'https://maven.google.com'}
         maven { url 'https://jitpack.io' }
-        mavenCentral()
+
 
     }
 }

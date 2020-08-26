@@ -3,11 +3,13 @@ package com.cjqb.caijiqianbao.activity;
 import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.cjqb.caijiqianbao.R;
+import com.cjqb.caijiqianbao.utils.SpUtil;
 import com.luck.picture.lib.config.PictureConfig;
 import com.luck.picture.lib.permissions.PermissionChecker;
 
@@ -32,9 +34,10 @@ public class ProFileInformationActivity extends BaseActivity{
     private ImageView basicImage;
     private ImageView doucumentsImage;
     private ImageView bankImage;
+    private String stage;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_information_activity);
 
@@ -56,121 +59,160 @@ public class ProFileInformationActivity extends BaseActivity{
 
     private void initIntent() {
         if (getIntent() != null){
-            String stage = getIntent().getStringExtra("STAGE");
-//            switch (stage){
-//                case "BasicInfo":
-//                    //基础信息
-//                    //基础信息
-//                    userLayout.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View view) {
-//                            Intent intent = new Intent(ProFileInformationActivity.this , BasicInitActivity.class);
-//                            startActivity(intent);
-//                        }
-//                    });
-//
-//                    //文档信息
-//                    doucumentsLayout.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View view) {
-//                            Intent intent = new Intent(ProFileInformationActivity.this , KYCDocumentActivity.class);
-//                            startActivity(intent);
-//                        }
-//                    });
-//
-//                    //银行卡资料
-//                    bankLayout.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View view) {
-//                            Intent intent = new Intent(ProFileInformationActivity.this , BankActivity.class);
-//                            startActivity(intent);
-//                        }
-//                    });
-//                    break;
-//                case "ContactInfo":
-//                    //联系方式
-//                    basicImage.setImageResource(R.drawable.icon_success);
-//
-//                    //文档信息
-//                    userLayout.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View view) {
-//                            Intent intent = new Intent(ProFileInformationActivity.this , KYCDocumentActivity.class);
-//                            startActivity(intent);
-//                        }
-//                    });
-//
-//                    //银行卡资料
-//                    doucumentsLayout.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View view) {
-//                            Intent intent = new Intent(ProFileInformationActivity.this , BankActivity.class);
-//                            startActivity(intent);
-//                        }
-//                    });
-//                    break;
-//                case "BankInfo":
-//                    //银行卡信息
-//                    basicImage.setImageResource(R.drawable.icon_success);
-//                    doucumentsImage.setImageResource(R.drawable.icon_success);
-//                    //文档信息
-//                    userLayout.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View view) {
-//                            Intent intent = new Intent(ProFileInformationActivity.this , KYCDocumentActivity.class);
-//                            startActivity(intent);
-//                        }
-//                    });
-//
-//                    //银行卡资料
-//                    bankLayout.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View view) {
-//                            Intent intent = new Intent(ProFileInformationActivity.this , BankActivity.class);
-//                            startActivity(intent);
-//                        }
-//                    });
-//                    break;
-//            }
+            stage = getIntent().getStringExtra("STAGE");
+//            Log.e("show" , stage);
+            switch (stage){
+                case "BasicInfo":
+                    //基础信息
+                    //基础信息
+                    userLayout.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(ProFileInformationActivity.this , BasicInitActivity.class);
+                            startActivity(intent);
+                        }
+                    });
 
+                    //文档信息
+                    doucumentsLayout.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(ProFileInformationActivity.this , KYCDocumentActivity.class);
+                            startActivity(intent);
+                        }
+                    });
 
-            userLayout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(ProFileInformationActivity.this , BasicInitActivity.class);
+                    //银行卡资料
+                    bankLayout.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(ProFileInformationActivity.this , BankActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                    break;
+                case "ContactInfo":
+                    //联系方式
+                    basicImage.setImageResource(R.drawable.icon_success);
+
+                    //文档信息
+                    doucumentsLayout.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(ProFileInformationActivity.this , KYCDocumentActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+
+                    //银行卡资料
+                    bankLayout.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(ProFileInformationActivity.this , BankActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                    break;
+                case "BankInfo":
+                    //银行卡信息
+                    basicImage.setImageResource(R.drawable.icon_success);
+                    doucumentsImage.setImageResource(R.drawable.icon_success);
+
+                    //银行卡资料
+                    bankLayout.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(ProFileInformationActivity.this , BankActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                    break;
+                case "OrderInfo":
+
+                    Intent intent = new Intent(ProFileInformationActivity.this , BorrowingActivity.class);
                     startActivity(intent);
-                }
-            });
-
-            //文档信息
-            doucumentsLayout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                    Intent intent = new Intent(ProFileInformationActivity.this , KYCDocumentActivity.class);
-                    startActivity(intent);
-                }
-            });
-
-            //银行卡资料
-            bankLayout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(ProFileInformationActivity.this , BankActivity.class);
-                    startActivity(intent);
-                }
-            });
-
+//                    Intent intent = new Intent(ProFileInformationActivity.this , ShopVIPActivity.class);
+//                    startActivity(intent);
+                    ProFileInformationActivity.this.finish();
+//                    AppleActivityStepEnd.forward(this, SpUtil.getInstance().getStringValue(SpUtil.BANK_CARD_NUMBER));
+                    break;
+            }
         }
     }
 
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        stage =   SpUtil.getInstance().getStringValue(SpUtil.STAGE);
+        switch (stage){
+            case "BasicInfo":
+                //基础信息
+                //基础信息
+                userLayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(ProFileInformationActivity.this , BasicInitActivity.class);
+                        startActivity(intent);
+                    }
+                });
 
-    @Subscribe (threadMode = ThreadMode.MAIN)
-    public void onThreadMain(MessageEvent messageEvent){
-        if (messageEvent.equals(MessageEvent.BASIC_INIT)){
-            basicImage.setImageResource(R.drawable.icon_success);
+                //文档信息
+                doucumentsLayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(ProFileInformationActivity.this , KYCDocumentActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+                //银行卡资料
+                bankLayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(ProFileInformationActivity.this , BankActivity.class);
+                        startActivity(intent);
+                    }
+                });
+                break;
+            case "ContactInfo":
+                //联系方式
+                basicImage.setImageResource(R.drawable.icon_success);
+
+                //文档信息
+                doucumentsLayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(ProFileInformationActivity.this , KYCDocumentActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+                //银行卡资料
+                bankLayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(ProFileInformationActivity.this , BankActivity.class);
+                        startActivity(intent);
+                    }
+                });
+                break;
+            case "BankInfo":
+                //银行卡信息
+                basicImage.setImageResource(R.drawable.icon_success);
+                doucumentsImage.setImageResource(R.drawable.icon_success);
+
+                //银行卡资料
+                bankLayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(ProFileInformationActivity.this , BankActivity.class);
+                        startActivity(intent);
+                    }
+                });
+                break;
         }
     }
+
 
 }

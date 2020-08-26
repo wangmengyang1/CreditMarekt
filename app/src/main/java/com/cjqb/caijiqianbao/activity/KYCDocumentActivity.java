@@ -9,24 +9,23 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
+
 import com.bumptech.glide.Glide;
 import com.cjqb.caijiqianbao.R;
 import com.cjqb.caijiqianbao.http.CommonCallback;
 import com.cjqb.caijiqianbao.http.HttpUrl;
 import com.cjqb.caijiqianbao.http.JsonBean;
-import com.cjqb.caijiqianbao.utils.ImageEntry;
+
 import com.cjqb.caijiqianbao.utils.ObjectEntry;
 import com.cjqb.caijiqianbao.utils.PictureDialog;
 import com.cjqb.caijiqianbao.utils.PictureSelectorUtils;
+
 import com.cjqb.caijiqianbao.utils.SpUtil;
 import com.cjqb.caijiqianbao.utils.ToastUtil;
 import com.luck.picture.lib.entity.LocalMedia;
 import com.luck.picture.lib.listener.OnResultCallbackListener;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
-
-import org.greenrobot.eventbus.EventBus;
 
 import java.io.File;
 import java.util.List;
@@ -49,7 +48,7 @@ public class KYCDocumentActivity extends BaseActivity {
     private String panUrl;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.kyc_decument_activity);
         initView();
@@ -252,7 +251,7 @@ public class KYCDocumentActivity extends BaseActivity {
     }
 
     private void getSubmit(){
-        OkGo.<JsonBean>post(HttpUrl.UPLOAD)
+        OkGo.<JsonBean>post(HttpUrl.UPLOAD_IMAGE)
                 .params("front_aadhaar_card", frontUrl)
                 .params("back_aadhaar_card", backUrl)
                 .params("pan_card", panUrl != null? panUrl :"")
@@ -268,7 +267,9 @@ public class KYCDocumentActivity extends BaseActivity {
                         JsonBean body = response.body();
                         if (body != null) {
                             if (("200").equals(body.getCode())) {
+                                SpUtil.getInstance().setStringValue(SpUtil.STAGE, "BankInfo");
                                 ToastUtil.show("Submit Success!");
+                                finish();
                             }
                         }
                     }

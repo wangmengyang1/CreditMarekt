@@ -1,8 +1,10 @@
 package com.cjqb.caijiqianbao.fragment;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +26,7 @@ import com.cjqb.caijiqianbao.activity.AppleActivityStepFirst;
 import com.cjqb.caijiqianbao.activity.AppleActivityStepThree;
 import com.cjqb.caijiqianbao.activity.AppleActivityStepTwo;
 import com.cjqb.caijiqianbao.activity.LoginActivity;
+import com.cjqb.caijiqianbao.application.myApplication;
 import com.cjqb.caijiqianbao.bean.appleHomeBean.AppleHomeJsonBean;
 import com.cjqb.caijiqianbao.bean.appleHomeBean.Data;
 import com.cjqb.caijiqianbao.bean.appleHomeBean.Option_value;
@@ -37,6 +40,8 @@ import com.cjqb.caijiqianbao.utils.SpUtil;
 import com.cjqb.caijiqianbao.utils.ToastUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
+import com.razorpay.Checkout;
+import com.razorpay.PaymentResultListener;
 import com.youth.banner.Banner;
 import com.youth.banner.listener.OnBannerListener;
 import com.youth.banner.loader.ImageLoader;
@@ -57,6 +62,7 @@ public class HomeNewFragment extends Fragment {
     private View ll;
     private View view;
     private TextView tvGo;
+
 
     public static void forward(Context context) {
         Intent intent = new Intent(context, HomeNewFragment.class);
@@ -87,6 +93,9 @@ public class HomeNewFragment extends Fragment {
                     getverifystatus();
 
                 }
+
+
+
             }
         });
         getData();
@@ -285,6 +294,14 @@ public class HomeNewFragment extends Fragment {
         params.height = height;
         view.setLayoutParams(params);
     }
+
+
+
+
+
+
+
+
 
 
 }

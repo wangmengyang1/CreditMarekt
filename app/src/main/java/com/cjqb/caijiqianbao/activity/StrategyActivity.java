@@ -32,7 +32,7 @@ public class StrategyActivity extends BaseActivity {
     TextView mTvLoad;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_strategy);
         mRvStrategy = findViewById(R.id.strategy_rv);

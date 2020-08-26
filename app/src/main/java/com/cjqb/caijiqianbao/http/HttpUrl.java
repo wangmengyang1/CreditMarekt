@@ -9,6 +9,7 @@ public class HttpUrl {
     public static final String AUTH_INFO = INDX + "/auth_info";
     public static final String BASIC_INFO = INDX + "/basic_info";
     public static final String UPLOAD = API + "/common/upload";
+    public static final String UPLOAD_IMAGE = API + "/index/setBaseinfo";
     public static final String BANK_CARD = INDX + "/bank_card";
     public static final String CONFIRM_LOAN = INDX + "/confirm_loan";
     public static final String ARTICLE = INDX + "/article_detail?article_id=";

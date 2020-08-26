@@ -90,7 +90,7 @@ public class AppleActivityStepTwo extends BaseActivity implements View.OnClickLi
     }
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step_2);
         mTvUrgentPhone = findViewById(R.id.tv_urgent_phone);

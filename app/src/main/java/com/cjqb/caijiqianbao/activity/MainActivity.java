@@ -14,6 +14,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -50,6 +51,8 @@ import com.cjqb.caijiqianbao.utils.SpUtil;
 import com.cjqb.caijiqianbao.utils.ToastUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
+import com.razorpay.Checkout;
+import com.razorpay.PaymentResultListener;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -87,8 +90,9 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         mHomeTv = findViewById(R.id.home_tv);
         mSelfTv = findViewById(R.id.self_tv);
@@ -149,6 +153,8 @@ public class MainActivity extends BaseActivity {
                             changetoHomeFragment();
 //                            if (mHomeNewFragment != null)
 //                                ((HomeNewFragment) mHomeNewFragment).init();
+                            //TODO
+//                            startPayment();
                         }
 
                     }
@@ -513,5 +519,57 @@ public class MainActivity extends BaseActivity {
             check();
         }
     }
+
+
+
+
+//    public void startPayment() {
+//        /**
+//         * Instantiate Checkout
+//         */
+//        Checkout checkout = new Checkout();
+//        checkout.setKeyID("rzp_test_VKD76XDXkPW0UY");
+//        /**
+//         * Set your logo here
+//         */
+//        checkout.setImage(R.drawable.icon_login_ff);
+//
+//        /**
+//         * Reference to current activity
+//         */
+//        final Activity activity = this;
+//
+//        /**
+//         * Pass your payment options to the Razorpay Checkout as a JSONObject
+//         */
+//        try {
+//            org.json.JSONObject options = new org.json.JSONObject();
+//
+//            options.put("data-name", "Leding Hub");
+//            options.put("data-key", "FRme9fm6S9vxY1");
+//            options.put("data-description", "Reference No. #123456");
+//            options.put("data-image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
+//            options.put("data-order_id", "order_DBJOWzybf0sJbb");//from response of step 3.
+//            options.put("theme.color", "#3399cc");
+//            options.put("data-currency", "INR");
+//            options.put("data-amount", "50000");//pass amount in currency subunits
+//            options.put("prefill.email", "gaurav.kumar@example.com");
+//            options.put("prefill.contact","+919977665544");
+//            checkout.open(activity, options);
+//        } catch(Exception e) {
+//            Log.e("show", "Error in starting Razorpay Checkout", e);
+//        }
+//    }
+//
+//
+//    @Override
+//    public void onPaymentSuccess(String s) {
+//        Log.e("show" , s  + "成功");
+//    }
+//
+//    @Override
+//    public void onPaymentError(int i, String s) {
+//        Log.e("show" , s  + "失败");
+//    }
 
 }

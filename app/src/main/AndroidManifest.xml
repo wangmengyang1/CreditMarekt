@@ -45,6 +45,8 @@
         <activity android:name=".activity.BasicInitActivity"/>
         <activity android:name=".activity.BankActivity"/>
         <activity android:name=".activity.KYCDocumentActivity"/>
+        <activity android:name=".activity.ShopVIPActivity"/>
+        <activity android:name=".activity.BorrowingActivity"/>
 
         <!--        <activity-->
         <!--            android:name="com.cjqb.caijiqianbao.activity.MainActivity"-->

@@ -26,7 +26,7 @@ public class LauncherActivity extends BaseActivity {
     private ImageView mCover;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launcher);
         mCover = findViewById(R.id.cover);

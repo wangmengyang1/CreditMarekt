@@ -61,7 +61,7 @@ public class AppleActivityStepFirst extends BaseActivity implements View.OnClick
     }
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step_1);
         mTvAddress = findViewById(R.id.tv_address);

@@ -52,7 +52,7 @@ public class ChanneInfoActivity extends BaseActivity {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_channe_info);
         mImg = (ImageView) findViewById(R.id.channe_info_img);

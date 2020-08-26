@@ -87,7 +87,7 @@ public class AppleActivityStepThree extends BaseActivity {
     List<BankInfoBean> mBankInfoList = new ArrayList<>();
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step_3);
 

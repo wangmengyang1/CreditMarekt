@@ -41,7 +41,7 @@ public class BankActivity extends BaseActivity {
     String bank_code;
     List<BankInfoBean> mBankInfoList = new ArrayList<>();
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bank_activity);
         initView();
@@ -101,6 +101,7 @@ public class BankActivity extends BaseActivity {
 //                                SpUtil.getInstance().setStringValue(SpUtil.BANK_MOBILE, bank_mobile);
                                 //身份信息BasicInfo    联系人信息   ContactInfo   银行信息  BankInfo   订单信息  OrderInfo
                                 SpUtil.getInstance().setStringValue(SpUtil.STAGE, "OrderInfo");
+                                finish();
 //                                AppleActivityStepEnd.forward(AppleActivityStepThree.this, bank_card_number);
 //                                finish();
 //                                nextData();

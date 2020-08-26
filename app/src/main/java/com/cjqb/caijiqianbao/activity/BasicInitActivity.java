@@ -23,6 +23,8 @@ import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,12 +59,18 @@ public class BasicInitActivity extends BaseActivity {
 
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EventBus.getDefault().register(this);
         setContentView(R.layout.basic_init_activity);
+
         initView();
     }
+
+
+//    @Subscribe (threadMode = ThreadMode.MAIN)
+//    public void onThreadMain(){
+//
+//    }
 
     private void initView() {
 
@@ -108,6 +116,7 @@ public class BasicInitActivity extends BaseActivity {
 //        contactPhoneNumber = (EditText) findViewById(R.id.contact_phone_number);
         submitBtn = (TextView) findViewById(R.id.submit_btn);
         monthly_salary = findViewById(R.id.monthly_salary);
+
 
         maritalStatus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -155,9 +164,10 @@ public class BasicInitActivity extends BaseActivity {
                         education.getText().toString().isEmpty() ||
                         address.getText().toString().isEmpty() ||
                         city.getText().toString().isEmpty() ||
-                        state.getText().toString().isEmpty() ||
-                        contactName.getText().toString().isEmpty()||
-                        contactPhoneNumber.getText().toString().isEmpty()
+                        state.getText().toString().isEmpty()
+//                        ||
+//                        contactName.getText().toString().isEmpty()||
+//                        contactPhoneNumber.getText().toString().isEmpty()
                 ){
                     ToastUtil.show("Information cannot be empty!");
                 }
@@ -205,17 +215,18 @@ public class BasicInitActivity extends BaseActivity {
 //                .params("basic_security_fund", basic_security_fund)
                 .params("basic_monthly_income", monthly_salary.getText().toString())
                 .params("basic_school", education.getText().toString())
-
-                .params("urgent_name", "")
-                .params("urgent_phone", "")
-                .params("urgent_relation", "")
-
-                .params("other_name", "")
-                .params("other_phone", "")
-                .params("other_relation", "")
+//
+//                .params("urgent_name", "")
+//                .params("urgent_phone", "")
+//                .params("urgent_relation", "")
+//
+//                .params("other_name", "")
+//                .params("other_phone", "")
+//                .params("other_relation", "")
                 .params("marriage", education.getText().toString())
-
+                .params("emailID", "785948562@qq.com")
                 .params("occupation", gender.getText().toString())
+                .params("area", state + city.getText().toString() + address.getText().toString())
                 .params("area", state + city.getText().toString() + address.getText().toString())
 //                .params("basic_network_time", "1年一下")
 //                .params("basic_security_fund", "有")
@@ -242,7 +253,8 @@ public class BasicInitActivity extends BaseActivity {
                         JsonBean body = response.body();
                         if (body != null) {
                             if (("200").equals(body.getCode())) {
-                                EventBus.getDefault().post(MessageEvent.BASIC_INIT);
+//                                EventBus.getDefault().register(this);
+//                                EventBus.getDefault().post(MessageEvent.BASIC_INIT);
                                 //身份信息BasicInfo    联系人信息   ContactInfo   银行信息  BankInfo   订单信息  OrderInfo
                                 SpUtil.getInstance().setStringValue(SpUtil.STAGE, "ContactInfo");
                                 finish();
@@ -274,4 +286,7 @@ public class BasicInitActivity extends BaseActivity {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
     }
+
+
+
 }

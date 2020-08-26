@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.cjqb.caijiqianbao.CommonAppContext;
 import com.cjqb.caijiqianbao.http.HttpClient;
+import com.razorpay.Checkout;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -18,6 +19,7 @@ public class myApplication extends CommonAppContext {
     public void onCreate() {
         super.onCreate();
         //umeng key 5e4182e50cafb26ded0002f9
+        Checkout.preload(getApplicationContext());
         HttpClient.getInstance().init(this);
         closeAndroidPDialog();
         /**

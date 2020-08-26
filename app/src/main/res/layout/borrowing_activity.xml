@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_20C69d"
+    >
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/color_000000"
+        android:text="Congratulations\nYour Profile is approved and you\n are eligible to loan"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_000000"
+        android:text="200000"
+        android:background="@color/white"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="30dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Please select the Tenure(months)"
+        android:textSize="18sp"
+        android:textColor="@color/color_000000"
+        android:layout_gravity="center"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        >
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:textSize="20dp"
+            android:text="1"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_20dp_fdc800_shape"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            />
+
+        <TextView
+            android:layout_width="80dp"
+
+            android:layout_height="40dp"
+            android:textSize="20dp"
+            android:text="3"
+            android:gravity="center"
+            android:textColor="@color/color_000000"
+            android:background="@drawable/bg_20dp_f9efca_shape"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+
+
+        <TextView
+            android:layout_width="80dp"
+
+            android:layout_height="40dp"
+            android:textSize="20dp"
+            android:text="6"
+            android:gravity="center"
+            android:textColor="@color/color_000000"
+            android:background="@drawable/bg_20dp_f9efca_shape"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginRight="10dp"
+            />
+
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:textSize="20dp"
+            android:text="12"
+            android:gravity="center"
+            android:textColor="@color/color_000000"
+            android:background="@drawable/bg_20dp_f9efca_shape"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            />
+
+    </LinearLayout>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="@color/color_000000"
+        android:text="Next, you need to become a member to get an installment loan"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"/>
+
+
+
+    <TextView
+        android:id="@+id/shop_vip_act_btn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="#ffc000"
+        android:textColor="@color/white"
+        android:text="Get Loans"
+        android:gravity="center"
+        android:textSize="20sp"
+        />
+
+
+</LinearLayout>
