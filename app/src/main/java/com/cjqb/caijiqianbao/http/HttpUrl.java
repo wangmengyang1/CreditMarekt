@@ -36,6 +36,7 @@ public class HttpUrl {
     public static final String BINDCODE = API + "/sendBindCardVerifyCode";
     public static final String GETVERIFYSTATUS = INDX + "/getVerifyStatus";
     public static final String CONTACTCENTER = API + "/user/contactCenter";
+    public static final String PAY_CALL = API + "/CaijiPay/payResultCallBack";
 
 //    http://192.168.8.121:8888/api/index/vest
 //    http://jqb.jingchunagky.com/portal/index/user_agreement

@@ -41,6 +41,7 @@ public class ShopVIPActivity extends BaseActivity implements PaymentResultListen
     private TextView shop_vip_act_btn;
     private String may_quota;
     private List<Loan_info> loan_info;
+    private String orderIds;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -140,6 +141,7 @@ public class ShopVIPActivity extends BaseActivity implements PaymentResultListen
 
 
     public void startPayment(String orderId) {
+        orderIds = orderId;
         /**
          * Instantiate Checkout
          */
@@ -178,8 +180,36 @@ public class ShopVIPActivity extends BaseActivity implements PaymentResultListen
     }
 
 
+    public void getPayCall(String s , String orderID){
+        OkGo.<JsonBean>post(HttpUrl.PAY_CALL)
+                .params("razorpay_payment_id" , s)
+                .params("razorpay_order_id" , orderID)
+                .params("razorpay_signature" , "njpj4ypdGKClAsarIgb4DuhB")
+                .execute(new CommonCallback<JsonBean>() {
+                    @Override
+                    public JsonBean convertResponse(okhttp3.Response response) throws Throwable {
+                        return JSON.parseObject(response.body().string(), JsonBean.class);
+                    }
+
+                    @Override
+                    public void onSuccess(Response<JsonBean> response) {
+                        super.onSuccess(response);
+                        JsonBean body = response.body();
+                        if (body != null) {
+                            if (("200").equals(body.getCode())) {
+
+                            }
+                        }
+
+                    }
+                });
+
+    }
+
+
     @Override
     public void onPaymentSuccess(String s) {
+        getPayCall(s , orderIds);
         ShopVIPActivity.this.finish();
         Log.e("show" , s  + "成功");
     }
