@@ -113,7 +113,7 @@ public class BasicInitActivity extends BaseActivity {
         education = (TextView) findViewById(R.id.education);
         address = (EditText) findViewById(R.id.address);
         city = (EditText) findViewById(R.id.city);
-        state = (TextView) findViewById(R.id.state);
+//        state = (TextView) findViewById(R.id.state);
 //        contactName = (EditText) findViewById(R.id.contact_name);
 //        contactPhoneNumber = (EditText) findViewById(R.id.contact_phone_number);
         submitBtn = (TextView) findViewById(R.id.submit_btn);
@@ -141,12 +141,12 @@ public class BasicInitActivity extends BaseActivity {
             }
         });
 
-        state.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showPickerView(stateList, state);
-            }
-        });
+//        state.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                showPickerView(stateList, state);
+//            }
+//        });
 
         gender.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -166,8 +166,7 @@ public class BasicInitActivity extends BaseActivity {
                         education.getText().toString().isEmpty() ||
                         address.getText().toString().isEmpty() ||
                         city.getText().toString().isEmpty() ||
-                        state.getText().toString().isEmpty()
-                        ||email.getText().toString().isEmpty()
+                        email.getText().toString().isEmpty()
 //                        contactName.getText().toString().isEmpty()||
 //                        contactPhoneNumber.getText().toString().isEmpty()
                 ){
@@ -228,8 +227,7 @@ public class BasicInitActivity extends BaseActivity {
                 .params("marriage", education.getText().toString())
                 .params("emailID", email.getText().toString())
                 .params("occupation", gender.getText().toString())
-                .params("area", state + city.getText().toString() + address.getText().toString())
-                .params("area", state + city.getText().toString() + address.getText().toString())
+                .params("area", city.getText().toString() + address.getText().toString())
 //                .params("basic_network_time", "1年一下")
 //                .params("basic_security_fund", "有")
 //                .params("basic_monthly_income", "3500")

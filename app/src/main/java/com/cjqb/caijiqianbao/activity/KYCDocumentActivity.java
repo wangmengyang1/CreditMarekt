@@ -1,5 +1,7 @@
 package com.cjqb.caijiqianbao.activity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -61,6 +63,34 @@ public class KYCDocumentActivity extends BaseActivity {
         kycDecumentBack = (ImageView) findViewById(R.id.kyc_decument_back);
         kycDecumentPan = (ImageView) findViewById(R.id.kyc_decument_pan);
         submitBtn = (TextView) findViewById(R.id.submit_btn);
+
+
+        SharedPreferences sharedPreferences= getSharedPreferences("test",
+                Context.MODE_PRIVATE);
+// 使用getString方法获得value，注意第2个参数是value的默认值
+        String frontUrlImage =sharedPreferences.getString("frontUrl", "");
+        String backUrlImage =sharedPreferences.getString("backUrl", "");
+        String panUrlImage =sharedPreferences.getString("panUrl", "");
+
+        if (!frontUrlImage.isEmpty()){
+            Glide.with(this)
+                    .load(frontUrlImage)
+                    .into(kycDecumentFront);
+        }
+
+        if (!backUrlImage.isEmpty()){
+            Glide.with(this)
+                    .load(backUrlImage)
+                    .into(kycDecumentBack);
+        }
+
+        if (!panUrlImage.isEmpty()){
+            Glide.with(this)
+                    .load(panUrlImage)
+                    .into(kycDecumentPan);
+        }
+
+
 
 
         kycDecumentFront.setOnClickListener(new View.OnClickListener() {
@@ -234,12 +264,25 @@ public class KYCDocumentActivity extends BaseActivity {
                             if (("200").equals(body.getCode())) {
                                 switch (showType){
                                     case 1:
+                                        SharedPreferences sharedPreferences = getSharedPreferences("image" , Context.MODE_PRIVATE);
+                                        SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
+                                        editor.putString("frontUrl", response.body().getData().getImg());
+                                        editor.commit();//提交修改
                                         frontUrl = response.body().getData().getImg();
                                         break;
                                     case 2:
+                                        SharedPreferences sharedPreferencesSEcond = getSharedPreferences("image" , Context.MODE_PRIVATE);
+                                        SharedPreferences.Editor editorSecond = sharedPreferencesSEcond.edit();//获取编辑器
+                                        editorSecond.putString("backUrl", response.body().getData().getImg());
+                                        editorSecond.commit();
+                                        //提交修改
                                         backUrl = response.body().getData().getImg();
                                         break;
                                     case 3:
+                                        SharedPreferences sharedPreferencesThread = getSharedPreferences("image" , Context.MODE_PRIVATE);
+                                        SharedPreferences.Editor editorThread = sharedPreferencesThread.edit();//获取编辑器
+                                        editorThread.putString("panUrl", response.body().getData().getImg());
+                                        editorThread.commit();
                                         panUrl = response.body().getData().getImg();
                                         break;
                                 }
