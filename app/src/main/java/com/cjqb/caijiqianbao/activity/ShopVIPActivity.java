@@ -9,10 +9,13 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.cjqb.caijiqianbao.R;
+import com.cjqb.caijiqianbao.adapter.ShopVIPAdapter;
 import com.cjqb.caijiqianbao.bean.BindCodeBean;
 import com.cjqb.caijiqianbao.bean.stepEnd.AppleBean;
 import com.cjqb.caijiqianbao.bean.stepEnd.Loan_info;
@@ -24,12 +27,14 @@ import com.cjqb.caijiqianbao.utils.SpUtil;
 import com.cjqb.caijiqianbao.utils.ToastUtil;
 import com.cjqb.caijiqianbao.utils.ValidatePhoneUtil;
 import com.cjqb.caijiqianbao.utils.WordUtil;
+import com.cjqb.caijiqianbao.view.LoanEntry;
 import com.cjqb.caijiqianbao.view.OrderEntry;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -42,11 +47,14 @@ public class ShopVIPActivity extends BaseActivity implements PaymentResultListen
     private String may_quota;
     private List<Loan_info> loan_info;
     private String orderIds;
+    private RecyclerView recyclerView;
+    private ShopVIPAdapter shopVIPAdapter;
+    private List<LoanEntry> loanEntries;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shop_vip_activity);
-
+        recyclerView = findViewById(R.id.recycler_view);
         shop_vip_act_btn = findViewById(R.id.shop_vip_act_btn);
         mayQuota();
         shop_vip_act_btn.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +63,17 @@ public class ShopVIPActivity extends BaseActivity implements PaymentResultListen
                 setData();
             }
         });
+
+        initRecyclerView();
+
+    }
+
+    private void initRecyclerView() {
+        loanEntries= new ArrayList<>();
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this , 3);
+        shopVIPAdapter = new ShopVIPAdapter(this , loanEntries);
+        recyclerView.setLayoutManager(gridLayoutManager);
+        recyclerView.setAdapter(shopVIPAdapter);
     }
 
 
@@ -79,19 +98,14 @@ public class ShopVIPActivity extends BaseActivity implements PaymentResultListen
 //                                mTvBank.setText("尾号" + substring + "");
 //                                mTvBank.setText(option.getBank_card_number() + "");
                                 loan_info = body.getLoan_info();
+                                for (int i =  0 ; i < loan_info.size() ; i++){
+                                    if (i == 0){
+                                        loanEntries.add(new LoanEntry(true , loan_info.get(0)));
+                                    }else {
+                                        loanEntries.add(new LoanEntry(false , loan_info.get(i)));
+                                    }
+                                }
                                 if (loan_info == null) return;
-//                                for (Loan_info loanInfo : loan_info) {
-//                                    mTimeList.add(loanInfo.getLoan_time());
-//                                    mMoney.put(loanInfo.getLoan_time(), loanInfo.getInterest());
-//                                }
-//                                mTvTime.setText(mTimeList.get(0));
-//                                mTvGrossInterset.setText(mMoney.get(mTimeList.get(0)));
-//                                amount = loan_info.get(0).getAmount();
-//                                mTvPopuAmount.setText(loan_info.get(0).getAmount() + "元");
-//                                mCbAgree.setText("我已阅读并同意购买" + loan_info.get(0).getAmount() + "元" + "VIP");
-//                                mTvAgreeMoney.setText("购买VIP" + loan_info.get(0).getAmount() + "元");
-
-
                             }
                         }
 
@@ -107,11 +121,10 @@ public class ShopVIPActivity extends BaseActivity implements PaymentResultListen
         OkGo.<OrderEntry>post(HttpUrl.CREATEORDER)
                 .params("collection_account",  SpUtil.getInstance().getStringValue(SpUtil.BANK_CARD_NUMBER))
                 .params("may_quota", may_quota)
-                .params("loan_time", loan_info.get(0).getCreate_time())
-                .params("gross_interset", loan_info.get(0).getInterest())
+                .params("loan_time", loan_info!= null &&  loan_info.get(0).getCreate_time() != null? loan_info.get(0).getCreate_time() : "2020-08-06 22:51")
+                .params("gross_interset", loan_info!= null &&  loan_info.get(0).getInterest() != null?loan_info.get(0).getInterest() : "0")
                 .params("loan_purpose", "买车")
-                .params("amount", 200000)
-
+                .params("amount", 1000)
                 .execute(new CommonCallback<OrderEntry>() {
                     @Override
                     public OrderEntry convertResponse(okhttp3.Response response) throws Throwable {
@@ -163,14 +176,14 @@ public class ShopVIPActivity extends BaseActivity implements PaymentResultListen
         try {
             org.json.JSONObject options = new org.json.JSONObject();
 
-            options.put("data-name", "Leding Hub");
-            options.put("data-key", "FRme9fm6S9vxY1");
+            options.put("name", "Leding Hub");
+            options.put("key", "FRme9fm6S9vxY1");
 //            options.put("data-description", "Reference No. #123456");
 //            options.put("data-image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
-            options.put("data-order_id", orderId);//from response of step 3.
+            options.put("order_id", orderId);//from response of step 3.
 //            options.put("theme.color", "#3399cc");
-            options.put("data-currency", "INR");
-            options.put("data-amount", "50000");//pass amount in currency subunits
+            options.put("currency", "INR");
+            options.put("amount", "1000");//pass amount in currency subunits
 //            options.put("prefill.email", "gaurav.kumar@example.com");
 //            options.put("prefill.contact","+919977665544");
             checkout.open(activity, options);
@@ -210,6 +223,8 @@ public class ShopVIPActivity extends BaseActivity implements PaymentResultListen
     @Override
     public void onPaymentSuccess(String s) {
         getPayCall(s , orderIds);
+        SpUtil.getInstance().setStringValue(SpUtil.IS_VIP, "1");
+        MainActivity.forward(ShopVIPActivity.this);
         ShopVIPActivity.this.finish();
         Log.e("show" , s  + "成功");
     }

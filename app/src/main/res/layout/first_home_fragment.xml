@@ -3,34 +3,62 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/color_F6FEF3"
+    android:background="@drawable/bg_79e9c7_ffffff_shape"
     >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textColor="@color/color_000000"
-        android:text="Transfer Cash to your \nBank Account Instantly"
-        android:gravity="center"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="80dp"
-        />
 
-    <TextView
-        android:id="@+id/first_home_frag"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:textColor="@color/color_000000"
-        android:text="upto  ₹"
-        android:layout_marginTop="30sp"
-        android:layout_gravity="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:background="@drawable/bg_4dp_f2f2f2_shape"
-        android:paddingTop="3dp"
-        android:paddingBottom="3dp"
-        android:paddingLeft="6dp"
-        android:paddingRight="6dp"/>
+        android:orientation="vertical"
+        android:layout_marginTop="40dp"
+        >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_59B9AF"
+            android:text="CONGRATULATION!"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:text="Transfer Cash to your Bank Account Instantly"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            />
+
+        <TextView
+            android:id="@+id/first_home_frag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textColor="@color/color_000000"
+            android:text="upto  ₹"
+            android:layout_marginTop="30sp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_4dp_f2f2f2_shape"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:layout_marginBottom="60dp"
+            />
+
+    </LinearLayout>
+
+
 
 
     <TextView
@@ -39,17 +67,18 @@
         android:textSize="17sp"
         android:text="I need a loan of（INR）"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="90dp"/>
+        android:layout_marginTop="30dp"/>
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:gravity="center"
         >
 
         <TextView
+            android:id="@+id/money_first"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
@@ -57,62 +86,76 @@
             android:gravity="center"
             android:textColor="@color/white"
             android:background="@drawable/bg_20dp_fdc800_shape"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
             />
 
         <TextView
+            android:id="@+id/money_second"
             android:layout_width="wrap_content"
-
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:text="10000"
             android:gravity="center"
             android:textColor="@color/color_000000"
             android:background="@drawable/bg_20dp_f9efca_shape"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:layout_marginLeft="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:layout_marginLeft="100dp"
             android:layout_marginRight="10dp"
+            android:layout_toRightOf="@id/money_first"
+
             />
 
 
         <TextView
+            android:id="@+id/money_thread"
             android:layout_width="wrap_content"
-
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:text="20000"
             android:gravity="center"
             android:textColor="@color/color_000000"
             android:background="@drawable/bg_20dp_f9efca_shape"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
             android:layout_marginRight="10dp"
+            android:layout_below="@id/money_first"
+            android:layout_marginTop="30dp"
             />
 
 
         <TextView
+            android:id="@+id/money_four"
             android:layout_width="wrap_content"
-
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:text="50000"
             android:gravity="center"
             android:textColor="@color/color_000000"
             android:background="@drawable/bg_20dp_f9efca_shape"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:layout_alignTop="@id/money_thread"
+            android:layout_alignLeft="@id/money_second"
             />
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/color_79E9C7"
+
         android:layout_marginTop="50dp"
         android:orientation="vertical"
         android:paddingLeft="30dp"
@@ -133,7 +176,7 @@
             android:id="@+id/get_instant_app"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="60dp"
             android:layout_gravity="center"
             android:text="Get Instant Approval"
             android:textColor="@color/white"

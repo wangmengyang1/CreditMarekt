@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_20C69d"
+    android:background="@drawable/bg_79e9c7_ffffff_shape"
     >
 
 
@@ -44,70 +44,69 @@
         />
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_marginTop="50dp"
-        >
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        >-->
 
-        <TextView
-            android:layout_width="80dp"
-            android:layout_height="40dp"
-            android:textSize="20dp"
-            android:text="1"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:background="@drawable/bg_20dp_fdc800_shape"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            />
+<!--        <TextView-->
+<!--            android:layout_width="80dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:background="@drawable/bg_20dp_fdc800_shape"-->
+<!--            android:gravity="center"-->
+<!--            android:paddingLeft="10dp"-->
+<!--            android:paddingRight="10dp"-->
+<!--            android:text="1"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20dp" />-->
 
-        <TextView
-            android:layout_width="80dp"
+<!--        <TextView-->
+<!--            android:layout_width="80dp"-->
 
-            android:layout_height="40dp"
-            android:textSize="20dp"
-            android:text="3"
-            android:gravity="center"
-            android:textColor="@color/color_000000"
-            android:background="@drawable/bg_20dp_f9efca_shape"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            />
-
-
-        <TextView
-            android:layout_width="80dp"
-
-            android:layout_height="40dp"
-            android:textSize="20dp"
-            android:text="6"
-            android:gravity="center"
-            android:textColor="@color/color_000000"
-            android:background="@drawable/bg_20dp_f9efca_shape"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:layout_marginRight="10dp"
-            />
+<!--            android:layout_height="40dp"-->
+<!--            android:textSize="20dp"-->
+<!--            android:text="3"-->
+<!--            android:gravity="center"-->
+<!--            android:textColor="@color/color_000000"-->
+<!--            android:background="@drawable/bg_20dp_f9efca_shape"-->
+<!--            android:paddingLeft="10dp"-->
+<!--            android:paddingRight="10dp"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginRight="10dp"-->
+<!--            />-->
 
 
-        <TextView
-            android:layout_width="80dp"
-            android:layout_height="40dp"
-            android:textSize="20dp"
-            android:text="12"
-            android:gravity="center"
-            android:textColor="@color/color_000000"
-            android:background="@drawable/bg_20dp_f9efca_shape"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            />
+<!--        <TextView-->
+<!--            android:layout_width="80dp"-->
 
-    </LinearLayout>
+<!--            android:layout_height="40dp"-->
+<!--            android:textSize="20dp"-->
+<!--            android:text="6"-->
+<!--            android:gravity="center"-->
+<!--            android:textColor="@color/color_000000"-->
+<!--            android:background="@drawable/bg_20dp_f9efca_shape"-->
+<!--            android:paddingLeft="10dp"-->
+<!--            android:paddingRight="10dp"-->
+<!--            android:layout_marginRight="10dp"-->
+<!--            />-->
+
+
+<!--        <TextView-->
+<!--            android:layout_width="80dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:textSize="20dp"-->
+<!--            android:text="12"-->
+<!--            android:gravity="center"-->
+<!--            android:textColor="@color/color_000000"-->
+<!--            android:background="@drawable/bg_20dp_f9efca_shape"-->
+<!--            android:paddingLeft="10dp"-->
+<!--            android:paddingRight="10dp"-->
+<!--            />-->
+
+<!--    </LinearLayout>-->
 
 
 
@@ -117,10 +116,15 @@
         android:textSize="15sp"
         android:textColor="@color/color_000000"
         android:text="Next, you need to become a member to get an installment loan"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="150dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"/>
 
+
+    <View
+        android:layout_width="1dp"
+        android:layout_weight="1"
+        android:layout_height="0dp"/>
 
 
     <TextView
@@ -135,6 +139,7 @@
         android:text="Get Loans"
         android:gravity="center"
         android:textSize="20sp"
+        android:layout_marginBottom="30dp"
         />
 
 

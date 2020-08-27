@@ -360,7 +360,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 ////                                } else if ("ContactInfo".equals(stage)) {
 //                                    AppleActivityStepTwo.forward(LoginActivity.this);
 //                                } else if ("BankInfo".equals(stage)) {
-                                    AppleActivityStepThree.forward(LoginActivity.this);
+//                                    AppleActivityStepThree.forward(LoginActivity.this);
 ////                                } else if ("OrderInfo".equals(stage)) {
 //                                    AppleActivityStepEnd.forward(LoginActivity.this, SpUtil.getInstance().getStringValue(SpUtil.BANK_CARD_NUMBER));
 //                                }

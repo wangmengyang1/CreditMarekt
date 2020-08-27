@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_F6FEF3"
+    android:background="@drawable/bg_79e9c7_ffffff_shape"
     >
 
 
@@ -74,7 +74,7 @@
                 android:id="@+id/kyc_decument_back"
                 android:layout_width="120dp"
                 android:layout_height="60dp"
-                android:src="@drawable/icon_kyc_02"
+                android:src="@drawable/icon_kyc_01"
                 android:scaleType="centerInside"
                 />
 
@@ -93,13 +93,22 @@
     </LinearLayout>
 
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#5f5f5f"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
         >
 
@@ -145,17 +154,46 @@
         </RelativeLayout>
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#5f5f5f"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
 
-    <TextView
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:textColor="@color/color_000000"
-        android:text="Ensure you are taking/uploading clear photos of original documents"
+        android:orientation="horizontal"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="80dp"
-        />
+        android:layout_marginTop="60dp"
+        android:gravity="center_vertical"
+        >
+
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/tip"
+            android:layout_marginRight="10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/color_000000"
+            android:text="Ensure you are taking/uploading clear photos of original documents"
+
+            />
+
+    </LinearLayout>
+
 
 
     <TextView
@@ -165,12 +203,39 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:background="@color/color_20C69d"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="120dp"
         android:layout_marginBottom="15dp"
         android:gravity="center"
         android:text="Confirm and Continue"
         android:textSize="18sp"
         android:textColor="@color/color_000000"
         />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        >
+
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/icon_dunpai"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/color_59B9AF"
+            android:text="128 bit SSL protection secure"
+            android:layout_marginLeft="10dp"
+
+            />
+    </LinearLayout>
 
 </LinearLayout>

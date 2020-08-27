@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_20C69d"
+    android:background="@drawable/bg_79e9c7_ffffff_shape"
     >
 
 
@@ -36,7 +36,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
+        android:textColor="@color/color_000000"
         android:text="As a 名字 member you‘ll have access to two no interest loans per year!"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="30dp"
@@ -64,6 +64,7 @@
         android:layout_marginRight="30dp">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -94,9 +95,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textColor="@color/color_000000"
-        android:textSize="20sp"
+        android:textSize="17sp"
         android:text="Loan amount will be credited to your submitted bank account."
-        android:gravity="bottom|center"
+        android:gravity="center"
         android:layout_marginBottom="20dp"/>
 
 

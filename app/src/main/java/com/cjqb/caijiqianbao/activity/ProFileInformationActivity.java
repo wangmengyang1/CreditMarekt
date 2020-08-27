@@ -128,13 +128,9 @@ public class ProFileInformationActivity extends BaseActivity{
                     });
                     break;
                 case "OrderInfo":
-
                     Intent intent = new Intent(ProFileInformationActivity.this , BorrowingActivity.class);
                     startActivity(intent);
-//                    Intent intent = new Intent(ProFileInformationActivity.this , ShopVIPActivity.class);
-//                    startActivity(intent);
                     ProFileInformationActivity.this.finish();
-//                    AppleActivityStepEnd.forward(this, SpUtil.getInstance().getStringValue(SpUtil.BANK_CARD_NUMBER));
                     break;
             }
         }
@@ -210,6 +206,11 @@ public class ProFileInformationActivity extends BaseActivity{
                         startActivity(intent);
                     }
                 });
+                break;
+            case "OrderInfo":
+                Intent intent = new Intent(ProFileInformationActivity.this , BorrowingActivity.class);
+                startActivity(intent);
+                ProFileInformationActivity.this.finish();
                 break;
         }
     }

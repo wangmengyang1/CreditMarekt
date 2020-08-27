@@ -257,7 +257,7 @@ public class MainActivity extends BaseActivity {
         if (mSelfFragment != null && mSelfFragment.isAdded()) {
             fragmentTransaction.hide(mSelfFragment);
         }
-        fragmentTransaction.commit();
+        fragmentTransaction.commitAllowingStateLoss();
     }
 
     //切换到HomeFragment

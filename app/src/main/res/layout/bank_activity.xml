@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_F6FEF3"
+    android:background="@drawable/bg_79e9c7_ffffff_shape"
     >
 
     <include layout="@layout/view_title" />
@@ -85,17 +85,34 @@
         />
 
 
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="50dp"
-        android:text="Loan amount will be credited to this bank account within minutes of your application completion."
-        android:gravity="center"
-        android:textColor="@color/color_000000"
-        />
+        android:layout_marginTop="60dp"
+        android:gravity="center_vertical"
+        >
+
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/tip"
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Loan amount will be credited to this bank account within minutes of your application completion."
+            android:textColor="@color/color_000000"
+            />
+
+    </LinearLayout>
+
+
     <TextView
         android:id="@+id/submit_btn"
         android:layout_width="match_parent"

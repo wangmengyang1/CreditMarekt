@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_F6FEF3"
+    android:background="@drawable/bg_79e9c7_ffffff_shape"
     >
 
 
@@ -56,7 +56,9 @@
 
                 <ImageView
                     android:layout_width="20dp"
-                    android:layout_height="20dp"/>
+                    android:layout_height="20dp"
+                    android:src="@drawable/yonghu"
+                    />
 
                 <EditText
                     android:id="@+id/user_name"
@@ -89,7 +91,9 @@
 
                 <ImageView
                     android:layout_width="20dp"
-                    android:layout_height="20dp"/>
+                    android:layout_height="20dp"
+                    android:src="@drawable/shenfenzheng"
+                    />
 
                 <EditText
                     android:id="@+id/card_id"
@@ -102,6 +106,41 @@
                     android:hint="Card ID"
                     />
             </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="Email"
+                android:layout_marginTop="20dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="4dp"
+                >
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/youxiang"
+                    />
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_000000"
+                    android:textSize="15sp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:hint="email"
+                    />
+            </LinearLayout>
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -121,7 +160,9 @@
 
                 <ImageView
                     android:layout_width="20dp"
-                    android:layout_height="20dp"/>
+                    android:layout_height="20dp"
+                    android:src="@drawable/zhiye"
+                    />
 
                 <TextView
                     android:id="@+id/gender"
@@ -131,6 +172,9 @@
                     android:textSize="15sp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
+                    android:text="Occupation"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
                     />
             </LinearLayout>
 
@@ -152,7 +196,9 @@
 
                 <ImageView
                     android:layout_width="20dp"
-                    android:layout_height="20dp"/>
+                    android:layout_height="20dp"
+                    android:src="@drawable/wu"
+                    />
 
                 <TextView
                     android:id="@+id/marital_status"
@@ -162,6 +208,9 @@
                     android:textSize="15sp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
+                    android:text="Marital Status"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
                     />
             </LinearLayout>
 
@@ -184,7 +233,9 @@
 
                 <ImageView
                     android:layout_width="20dp"
-                    android:layout_height="20dp"/>
+                    android:layout_height="20dp"
+                    android:src="@drawable/jiaoyu"
+                    />
 
                 <TextView
                     android:id="@+id/education"
@@ -193,7 +244,10 @@
                     android:textColor="@color/color_000000"
                     android:textSize="15sp"
                     android:paddingLeft="10dp"
+                    android:text="Education"
                     android:paddingRight="10dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
                     />
             </LinearLayout>
             <TextView
@@ -214,7 +268,9 @@
 
                 <ImageView
                     android:layout_width="20dp"
-                    android:layout_height="20dp"/>
+                    android:layout_height="20dp"
+                    android:src="@drawable/shouru"
+                    />
 
                 <TextView
                     android:id="@+id/monthly_salary"
@@ -224,6 +280,9 @@
                     android:textSize="15sp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
+                    android:text="Monthly Salary/Income"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
                     />
             </LinearLayout>
 
@@ -255,7 +314,9 @@
 
                 <ImageView
                     android:layout_width="20dp"
-                    android:layout_height="20dp"/>
+                    android:layout_height="20dp"
+                    android:src="@drawable/dizhi"
+                    />
 
                 <EditText
                     android:id="@+id/address"
@@ -287,7 +348,9 @@
 
                 <ImageView
                     android:layout_width="20dp"
-                    android:layout_height="20dp"/>
+                    android:layout_height="20dp"
+                    android:src="@drawable/dizhi"
+                    />
 
                 <EditText
                     android:id="@+id/city"
@@ -319,7 +382,9 @@
 
                 <ImageView
                     android:layout_width="20dp"
-                    android:layout_height="20dp"/>
+                    android:layout_height="20dp"
+                    android:src="@drawable/dizhi"
+                    />
 
                 <TextView
                     android:id="@+id/state"
@@ -329,6 +394,9 @@
                     android:textSize="15sp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="State"
                     />
             </LinearLayout>
 

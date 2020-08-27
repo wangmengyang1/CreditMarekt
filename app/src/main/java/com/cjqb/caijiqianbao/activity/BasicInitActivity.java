@@ -50,6 +50,8 @@ public class BasicInitActivity extends BaseActivity {
     private TextView submitBtn;
     private TextView monthly_salary;
 
+    private EditText email;
+
     private List<String> stateList = new ArrayList<String>();
     private List<String> mMoneyList = new ArrayList<String>();
     private List<String> mList = new ArrayList<String>();
@@ -101,7 +103,7 @@ public class BasicInitActivity extends BaseActivity {
         mList.add("事业单位");
         mList.add("企业单位");
         mList.add("其他");
-
+        email = findViewById(R.id.email);
         titleView = (TextView) findViewById(R.id.titleView);
         btnBack = (ImageView) findViewById(R.id.btn_back);
         userName = (EditText) findViewById(R.id.user_name);
@@ -165,7 +167,7 @@ public class BasicInitActivity extends BaseActivity {
                         address.getText().toString().isEmpty() ||
                         city.getText().toString().isEmpty() ||
                         state.getText().toString().isEmpty()
-//                        ||
+                        ||email.getText().toString().isEmpty()
 //                        contactName.getText().toString().isEmpty()||
 //                        contactPhoneNumber.getText().toString().isEmpty()
                 ){
@@ -224,7 +226,7 @@ public class BasicInitActivity extends BaseActivity {
 //                .params("other_phone", "")
 //                .params("other_relation", "")
                 .params("marriage", education.getText().toString())
-                .params("emailID", "785948562@qq.com")
+                .params("emailID", email.getText().toString())
                 .params("occupation", gender.getText().toString())
                 .params("area", state + city.getText().toString() + address.getText().toString())
                 .params("area", state + city.getText().toString() + address.getText().toString())
