@@ -136,9 +136,9 @@ public class SelfFragment extends Fragment {
                                 UserData data = bean.getData();
                                 mTvIphoneNum.setText(data.getUser_info().getMobile());
                                 if ("0".equals(data.getUser_info().getIs_vip())) {
-                                    mTvIsVip.setText("未开通会员");
+                                    mTvIsVip.setText("Unregistered member");
                                 } else {
-                                    mTvIsVip.setText("会员");
+                                    mTvIsVip.setText("vip");
                                 }
                                 MainSelfAdapter selfAdapter = new MainSelfAdapter(getActivity(), data.getService_list());
                                 mRecyclerView.setLayoutManager(new FullyLinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));

@@ -77,26 +77,26 @@ public class CreditFragment extends Fragment implements View.OnClickListener, Sw
         super.onActivityCreated(savedInstanceState);
         getList(page);
         moneyMap = new LinkedHashMap<String, String>();
-        moneyMap.put("不限", "");
+        moneyMap.put("default", "");
         moneyMap.put("500-5000", "1");
         moneyMap.put("5001-20000", "2");
         moneyMap.put("20001-50000", "3");
         moneyMap.put("50001-100000", "4");
-        moneyMap.put("10万以上", "5");
+        moneyMap.put("10w+", "5");
 
         sortMap = new LinkedHashMap<String, String>();
-        sortMap.put("默认排序", "");
-        sortMap.put("按借款金额", "amount");
-        sortMap.put("按借款期限", "term");
+        sortMap.put("default", "");
+        sortMap.put("amount", "amount");
+        sortMap.put("term", "term");
 
         screenMap = new LinkedHashMap<String, String>();
-        screenMap.put("全部", "");
-        screenMap.put("最热渠道", "is_hot");
-        screenMap.put("最新上线", "is_new");
-        screenMap.put("推荐渠道", "is_fast");
-        screenMap.put("下款快", "is_recommend");
-        screenMap.put("可分期", "pay_monthly");
-        screenMap.put("超低息", "is_low");
+        screenMap.put("All", "");
+        screenMap.put("hot", "is_hot");
+        screenMap.put("new", "is_new");
+        screenMap.put("fast", "is_fast");
+        screenMap.put("recomment", "is_recommend");
+        screenMap.put("monthly", "pay_monthly");
+        screenMap.put("is_low", "is_low");
 
         moneyData = new ArrayList<>();
         sortData = new ArrayList<>();

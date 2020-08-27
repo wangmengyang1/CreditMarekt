@@ -110,8 +110,8 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     private void showWaiting() {
         progressDialog = new ProgressDialog(mContext);
         progressDialog.setIcon(R.mipmap.ic_launcher);
-        progressDialog.setTitle("加载dialog");
-        progressDialog.setMessage("加载中...");
+        progressDialog.setTitle("dialog");
+        progressDialog.setMessage("diglog...");
         progressDialog.setIndeterminate(true);// 是否形成一个加载动画  true表示不明确加载进度形成转圈动画  false 表示明确加载进度
         progressDialog.setCancelable(false);//点击返回键或者dialog四周是否关闭dialog  true表示可以关闭 false表示不可关闭
         progressDialog.show();

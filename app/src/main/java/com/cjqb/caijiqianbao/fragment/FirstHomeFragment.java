@@ -32,6 +32,12 @@ public class FirstHomeFragment extends Fragment {
     private TextView getInstantApp;
     private TextView first_home_frag;
 
+
+    private TextView firstAmount;
+    private TextView secondAmount;
+    private TextView ThreadAmount;
+    private TextView FourAmount;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -45,6 +51,10 @@ public class FirstHomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         getInstantApp = view.findViewById(R.id.get_instant_app);
         first_home_frag= view.findViewById(R.id.first_home_frag);
+        firstAmount= view.findViewById(R.id.money_first);
+        secondAmount= view.findViewById(R.id.money_second);
+        ThreadAmount= view.findViewById(R.id.money_thread);
+        FourAmount= view.findViewById(R.id.money_four);
         getInstantApp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,6 +68,56 @@ public class FirstHomeFragment extends Fragment {
             }
         });
         getData();
+
+
+
+        firstAmount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                firstAmount.setBackgroundResource(R.drawable.bg_20dp_fdc800_shape);
+                secondAmount.setBackgroundResource(R.drawable.bg_20dp_f9efca_shape);
+                ThreadAmount.setBackgroundResource(R.drawable.bg_20dp_f9efca_shape);
+                FourAmount.setBackgroundResource(R.drawable.bg_20dp_f9efca_shape);
+
+                first_home_frag.setText("upto  ₹ 5000" );
+            }
+        });
+
+
+        secondAmount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                firstAmount.setBackgroundResource(R.drawable.bg_20dp_f9efca_shape);
+                secondAmount.setBackgroundResource(R.drawable.bg_20dp_fdc800_shape);
+                ThreadAmount.setBackgroundResource(R.drawable.bg_20dp_f9efca_shape);
+                FourAmount.setBackgroundResource(R.drawable.bg_20dp_f9efca_shape);
+                first_home_frag.setText("upto  ₹ 10000" );
+            }
+        });
+
+
+        ThreadAmount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                firstAmount.setBackgroundResource(R.drawable.bg_20dp_f9efca_shape);
+                secondAmount.setBackgroundResource(R.drawable.bg_20dp_f9efca_shape);
+                ThreadAmount.setBackgroundResource(R.drawable.bg_20dp_fdc800_shape);
+                FourAmount.setBackgroundResource(R.drawable.bg_20dp_f9efca_shape);
+                first_home_frag.setText("upto  ₹ 20000" );
+            }
+        });
+
+
+        FourAmount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                firstAmount.setBackgroundResource(R.drawable.bg_20dp_f9efca_shape);
+                secondAmount.setBackgroundResource(R.drawable.bg_20dp_f9efca_shape);
+                ThreadAmount.setBackgroundResource(R.drawable.bg_20dp_f9efca_shape);
+                FourAmount.setBackgroundResource(R.drawable.bg_20dp_fdc800_shape);
+                first_home_frag.setText("upto  ₹ 50000" );
+            }
+        });
     }
 
 
@@ -87,8 +147,9 @@ public class FirstHomeFragment extends Fragment {
 //                            }
 //                            initBanner();
                             first_home_frag.setText("upto  ₹" + quota_value);
+
 //                            mTvQuateRate.setText(quota_interest_rate + "");
-//                            SpUtil.getInstance().setStringValue(SpUtil.MAY_QUOTA, option_value.getMay_quota());
+                            SpUtil.getInstance().setStringValue(SpUtil.LOAN_AMOUNT, option_value.getMay_quota());
                         }
 
                     }

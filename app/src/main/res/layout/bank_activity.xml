@@ -68,7 +68,8 @@
         android:text="IFSC Code"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="50dp"
-        android:visibility="invisible"
+        android:visibility="gone"
+
         />
 
 
@@ -81,7 +82,7 @@
         android:textColor="@color/color_000000"
         android:layout_marginTop="15sp"
         android:layout_marginLeft="40dp"
-        android:visibility="invisible"
+        android:visibility="gone"
         />
 
 

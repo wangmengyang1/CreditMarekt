@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="15sp"
-            android:textColor="#5f5f5f"
+            android:textColor="#f5f5f5"
             android:text="7 month"
             android:gravity="center"
             android:background="@drawable/bg_4sp_dce1e4_shape"/>

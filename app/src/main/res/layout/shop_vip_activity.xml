@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:text="You Loan Amount"
@@ -20,6 +20,7 @@
 
 
     <TextView
+        android:id="@+id/borrowing_act_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/color_20C69d"
@@ -31,6 +32,7 @@
         android:paddingRight="30dp"
         android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal"
+        android:textSize="28sp"
         />
 
     <TextView

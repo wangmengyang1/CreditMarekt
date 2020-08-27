@@ -90,11 +90,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (!TextUtils.isEmpty(s) && s.length() == 11) {
-                    mBtCode.setEnabled(true);
-                } else {
-                    mBtCode.setEnabled(false);
-                }
+
                 changeEnable();
             }
 
@@ -111,9 +107,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (mCount == 60) {
-                    mBtCode.setEnabled(true);
-                }
+
                 changeEnable();
             }
 
@@ -181,8 +175,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                         if (bean != null) {
                             if (("200").equals(bean.getCode())) {
                                 mCount = 60;
-                                mBtCode.setText(mCount-- + "s后" + mGetCodeAgain);
-                                mBtCode.setEnabled(false);
+                                mBtCode.setText(mCount-- + "s");
                                 changeCodeText();
                             } else if (("90000").equals(bean.getCode())) {
                                 ToastUtil.show(response.body().getMsg());
@@ -210,11 +203,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         @Override
         public void run() {
             if (mCount != 0) {
-                mBtCode.setText(mCount-- + "s后" + mGetCodeAgain);
+                mBtCode.setText(mCount-- + "s");
                 changeCodeText();
             } else {
                 mBtCode.setText(mGetCodeAgain);
-                mBtCode.setEnabled(true);
+//                mBtCode.setEnabled(true);
                 handle.removeCallbacks(runnable);
             }
 

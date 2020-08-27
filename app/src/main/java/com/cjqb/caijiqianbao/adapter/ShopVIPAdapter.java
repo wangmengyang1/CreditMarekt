@@ -36,25 +36,14 @@ public class ShopVIPAdapter extends RecyclerView.Adapter<ShopVIPAdapter.ShopVIPH
     }
 
 
-    @Override
-    public void onBindViewHolder(@NonNull ShopVIPHolder holder, int position, @NonNull List<Object> payloads) {
-        if (payloads.contains("payload")){
-            if (loan_info.get(position).isCheck()){
-                holder.name.setBackgroundResource(R.drawable.bg_4sp_dce1e4_shape);
-            }else {
-                holder.name.setBackgroundResource(R.drawable.bg_4sp_f08f2e_shape);
-            }
-        }else {
-            onBindViewHolder(holder , position);
-        }
-    }
 
     @Override
     public void onBindViewHolder(@NonNull ShopVIPHolder holder, int position) {
         if (loan_info.get(position).isCheck()){
-            holder.name.setBackgroundResource(R.drawable.bg_4sp_dce1e4_shape);
-        }else {
             holder.name.setBackgroundResource(R.drawable.bg_4sp_f08f2e_shape);
+        }else {
+            holder.name.setBackgroundResource(R.drawable.bg_4sp_dce1e4_shape);
+
         }
 
         holder.name.setText(loan_info.get(position).getLoan_info().getLoan_time() + "");
@@ -62,8 +51,12 @@ public class ShopVIPAdapter extends RecyclerView.Adapter<ShopVIPAdapter.ShopVIPH
 
 
         holder.itemView.setOnClickListener(view -> {
-            loan_info.get(position).setCheck(!loan_info.get(position).isCheck());
-            notifyItemChanged(position , "payload");
+
+            for (int i = 0 ; i < loan_info.size() ; i++){
+                loan_info.get(i).setCheck(false);
+            }
+            loan_info.get(position).setCheck(true);
+           notifyDataSetChanged();
         });
 
     }

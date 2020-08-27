@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/self_iphone_rv"
             android:layout_marginLeft="90dp"
-            android:text="开通VIP"
+            android:text="dredge vip"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
@@ -106,7 +106,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@id/img_Logout"
-                    android:text="退出登录"
+                    android:text="log out"
                     android:textColor="@color/textColor"
                     android:textSize="16sp" />
 

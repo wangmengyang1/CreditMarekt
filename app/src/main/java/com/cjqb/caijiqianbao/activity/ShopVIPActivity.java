@@ -50,12 +50,16 @@ public class ShopVIPActivity extends BaseActivity implements PaymentResultListen
     private RecyclerView recyclerView;
     private ShopVIPAdapter shopVIPAdapter;
     private List<LoanEntry> loanEntries;
+    private TextView amount;
+    int postion = 0;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shop_vip_activity);
         recyclerView = findViewById(R.id.recycler_view);
         shop_vip_act_btn = findViewById(R.id.shop_vip_act_btn);
+        amount= findViewById(R.id.borrowing_act_amount);
+        amount.setText(SpUtil.getInstance().getStringValue(SpUtil.LOAN_AMOUNT) + "");
         mayQuota();
         shop_vip_act_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,6 +102,7 @@ public class ShopVIPActivity extends BaseActivity implements PaymentResultListen
 //                                mTvBank.setText("尾号" + substring + "");
 //                                mTvBank.setText(option.getBank_card_number() + "");
                                 loan_info = body.getLoan_info();
+                                Log.e("show" , loan_info.size() + "ddd");
                                 for (int i =  0 ; i < loan_info.size() ; i++){
                                     if (i == 0){
                                         loanEntries.add(new LoanEntry(true , loan_info.get(0)));
@@ -105,6 +110,7 @@ public class ShopVIPActivity extends BaseActivity implements PaymentResultListen
                                         loanEntries.add(new LoanEntry(false , loan_info.get(i)));
                                     }
                                 }
+                                shopVIPAdapter.notifyDataSetChanged();
                                 if (loan_info == null) return;
                             }
                         }
@@ -116,15 +122,20 @@ public class ShopVIPActivity extends BaseActivity implements PaymentResultListen
 
     private void setData() {
 
+        for(int i = 0 ; i < loanEntries.size() ; i++){
+            if (loanEntries.get(i).isCheck()){
+                postion = i;
+            }
+        }
 
 
         OkGo.<OrderEntry>post(HttpUrl.CREATEORDER)
                 .params("collection_account",  SpUtil.getInstance().getStringValue(SpUtil.BANK_CARD_NUMBER))
                 .params("may_quota", may_quota)
-                .params("loan_time", loan_info!= null &&  loan_info.get(0).getCreate_time() != null? loan_info.get(0).getCreate_time() : "2020-08-06 22:51")
-                .params("gross_interset", loan_info!= null &&  loan_info.get(0).getInterest() != null?loan_info.get(0).getInterest() : "0")
+                .params("loan_time", loan_info!= null &&  loan_info.get(postion).getCreate_time() != null? loan_info.get(postion).getCreate_time() : "2020-08-06 22:51")
+                .params("gross_interset", loan_info!= null &&  loan_info.get(postion).getInterest() != null?loan_info.get(postion).getInterest() : "0")
                 .params("loan_purpose", "买车")
-                .params("amount", 1000)
+                .params("amount", loan_info.get(postion).getAmount())
                 .execute(new CommonCallback<OrderEntry>() {
                     @Override
                     public OrderEntry convertResponse(okhttp3.Response response) throws Throwable {
@@ -183,7 +194,7 @@ public class ShopVIPActivity extends BaseActivity implements PaymentResultListen
             options.put("order_id", orderId);//from response of step 3.
 //            options.put("theme.color", "#3399cc");
             options.put("currency", "INR");
-            options.put("amount", "1000");//pass amount in currency subunits
+            options.put("amount", loan_info.get(postion).getAmount());//pass amount in currency subunits
 //            options.put("prefill.email", "gaurav.kumar@example.com");
 //            options.put("prefill.contact","+919977665544");
             checkout.open(activity, options);

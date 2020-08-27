@@ -11,7 +11,7 @@
         android:background="@color/white"
         android:gravity="center"
         android:paddingTop="20dp"
-        android:text="贷款大全"
+        android:text="Loan books"
         android:textColor="@color/black1"
         android:textSize="16sp" />
 
@@ -37,7 +37,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="金额"
+                android:text="money"
                 android:textColor="@color/gray1" />
 
             <ImageView
@@ -61,7 +61,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="排序"
+                android:text="sort"
                 android:textColor="@color/gray1" />
 
             <ImageView
@@ -84,7 +84,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="筛选"
+                android:text="screen"
                 android:textColor="@color/gray1" />
 
             <ImageView

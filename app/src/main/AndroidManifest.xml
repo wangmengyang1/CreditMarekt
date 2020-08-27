@@ -40,13 +40,20 @@
         </activity>
 
 
-        <activity android:name=".activity.MainActivity"/>
-        <activity android:name=".activity.ProFileInformationActivity"/>
-        <activity android:name=".activity.BasicInitActivity"/>
-        <activity android:name=".activity.BankActivity"/>
-        <activity android:name=".activity.KYCDocumentActivity"/>
-        <activity android:name=".activity.ShopVIPActivity"/>
-        <activity android:name=".activity.BorrowingActivity"/>
+        <activity android:name=".activity.MainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.ProFileInformationActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.BasicInitActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.BankActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.KYCDocumentActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.ShopVIPActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.BorrowingActivity"
+            android:screenOrientation="portrait"/>
 
         <!--        <activity-->
         <!--            android:name="com.cjqb.caijiqianbao.activity.MainActivity"-->

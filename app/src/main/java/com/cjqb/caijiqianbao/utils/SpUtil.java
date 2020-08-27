@@ -45,6 +45,7 @@ public class SpUtil {
     public static final String VEST_EARLY = "vest_early";
     public static final String COUNT_DIALOG = "count_dialog";
     public static final String SHOW_DIALOG = "show_dialog";
+    public static final String LOAN_AMOUNT = "LOAN_AMOUNT";
 
 
     private SpUtil() {
